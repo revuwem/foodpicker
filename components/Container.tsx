@@ -3,7 +3,7 @@ interface ContainerProps {
 }
 
 const Container = ({ children }: ContainerProps) => {
-  return <div className="pl-9 pr-8">{children}</div>;
+  return <div className="pl-9 pr-8 h-full">{children}</div>;
 };
 
 export default Container;
