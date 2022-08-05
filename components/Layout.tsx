@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Footer from "./Footer";
 import Header from "./Header";
 
 interface LayoutProps {
@@ -15,7 +16,7 @@ const Layout = ({ children }: LayoutProps) => {
       </Head>
       <Header />
       <main>{children}</main>
-      <footer>Footer</footer>
+      <Footer />
     </div>
   );
 };
