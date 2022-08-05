@@ -9,7 +9,7 @@ const Footer = () => {
           <LogoIcon />
         </span>
         <p className="text-xs md:text-base">
-          Made with ❤️ by <a href="https://github.com/revuwem">revuwem</a>{" "}
+          Made with 💜 by <a href="https://github.com/revuwem">revuwem</a>{" "}
         </p>
       </footer>
     </Container>
