@@ -4,7 +4,7 @@ import LogoIcon from "./icons/LogoIcon";
 const Footer = () => {
   return (
     <Container>
-      <footer className="flex justify-between items-center">
+      <footer className="h-16 flex justify-between items-center">
         <span className="w-24 md:w-32 mb-1">
           <LogoIcon />
         </span>
