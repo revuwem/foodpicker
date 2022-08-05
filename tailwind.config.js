@@ -13,6 +13,7 @@ module.exports = {
         300: "#629460",
         400: "#F0F5EF",
       },
+      bg: "#FCFBFE",
     },
     extend: {},
   },
