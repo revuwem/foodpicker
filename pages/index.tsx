@@ -1,8 +1,16 @@
 import type { NextPage } from "next";
-import Layout from "../components/Layout";
+import Container from "../components/Container";
+import Picker from "../components/Picker";
+import FlexCenter from "../components/FlexCenter";
 
 const Home: NextPage = () => {
-  return <p>main</p>;
+  return (
+    <Container>
+      <FlexCenter>
+        <Picker />
+      </FlexCenter>
+    </Container>
+  );
 };
 
 export default Home;
