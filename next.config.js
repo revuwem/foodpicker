@@ -11,6 +11,9 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    domains: ["spoonacular.com"],
+  },
 };
 
 module.exports = nextConfig;
