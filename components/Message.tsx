@@ -1,13 +1,13 @@
 import Image from "next/image";
 import pastaImg from "../assets/images/pasta.png";
 
-interface ErrorMessageProps {
+interface MessageProps {
   msg: string;
 }
 
-const ErrorMessage = ({ msg }: ErrorMessageProps) => {
+const Message = ({ msg }: MessageProps) => {
   return (
-    <div className="max-w-xl p-4 flex flex-col items-center">
+    <div className="w-full flex flex-col items-center">
       <Image
         src={pastaImg}
         width="600px"
@@ -21,4 +21,4 @@ const ErrorMessage = ({ msg }: ErrorMessageProps) => {
   );
 };
 
-export default ErrorMessage;
+export default Message;
