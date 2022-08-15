@@ -9,6 +9,7 @@ const LoginButton = () => {
           <UserIcon />
         </span>
         <span className="text-sm md:text-base capitalize">Log in</span>
+        <button id="loginButton"></button>
       </a>
     </Link>
   );
