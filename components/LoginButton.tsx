@@ -1,10 +1,8 @@
-import Link from "next/link";
 import UserIcon from "./icons/UserIcon";
 import { signIn, signOut, useSession } from "next-auth/react";
 
 const LoginButton = () => {
-  const { data: session, status } = useSession();
-  const loading = status === "loading";
+  const { data: session } = useSession();
 
   if (!session) {
     return (
@@ -27,15 +25,22 @@ const LoginButton = () => {
   if (session?.user) {
     return (
       <>
-        {session.user.image && (
-          <span style={{ backgroundImage: `url('${session.user.image}')` }} />
-        )}
-        <span>
-          <small>Signed in as</small>
-          <br />
-          <strong>{session.user.email ?? session.user.name}</strong>
-        </span>
+        <a href="/profile" className="h-full flex items-center">
+          <div className="flex items-end gap-2">
+            {session.user.image && (
+              <img
+                src={session.user.image}
+                alt=""
+                className="w-8 h-8 rounded-full"
+              />
+            )}
+            <span>
+              {session.user.name?.split(" ")[0] || session.user.email}
+            </span>
+          </div>
+        </a>
         <a
+          hidden
           href={`/api/auth/signout`}
           onClick={(e) => {
             e.preventDefault();
