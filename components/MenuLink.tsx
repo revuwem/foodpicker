@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { forwardRef, ReactNode } from "react";
+import React, { forwardRef, ReactNode } from "react";
 
 type MenuLinkProps = {
   href: string;
   children: ReactNode;
   className?: string;
-  onClick?: (e: any) => void;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 };
 
 type MenuLinkRef = HTMLAnchorElement;
