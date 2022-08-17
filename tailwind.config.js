@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -14,6 +16,9 @@ module.exports = {
         400: "#F0F5EF",
       },
       bg: "#FCFBFE",
+      black: colors.black,
+      gray: colors.gray,
+      slate: colors.slate,
     },
     extend: {},
   },
