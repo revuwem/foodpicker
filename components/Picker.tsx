@@ -16,7 +16,7 @@ const Picker = () => {
       <h3 className="font-normal text-2xl md:text-3xl mb-10 md:mb-14">
         Are you hungry?
       </h3>
-      <Button onClick={(e) => console.log("pick random food")}>
+      <Button type="link" href="/random">
         Pick random food
       </Button>
     </div>
