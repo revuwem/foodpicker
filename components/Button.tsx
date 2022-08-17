@@ -9,10 +9,12 @@ const ButtonVariantClassName = {
   primary: {
     base: "bg-green-300 text-white",
     hover: "hover:bg-green-200",
+    disabled: "disabled:bg-green-300",
   },
   outlined: {
     base: "bg-white text-green-300 border border-solid border-green-300",
     hover: "hover:bg-green-400",
+    disabled: "disabled:bg-white",
   },
 };
 
@@ -28,6 +30,7 @@ interface ButtonProps {
   size: ButtonSize;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: string;
+  disabled?: boolean;
 }
 
 const Button = ({
@@ -37,6 +40,7 @@ const Button = ({
   onClick,
   href = "",
   children,
+  disabled = false,
 }: ButtonProps) => {
   if (type === "link") {
     return (
@@ -46,6 +50,7 @@ const Button = ({
             "transition",
             ButtonVariantClassName[variant].base,
             ButtonVariantClassName[variant].hover,
+            ButtonVariantClassName[variant].disabled,
             ButtonSizeClassName[size]
           )}
         >
@@ -62,9 +67,11 @@ const Button = ({
         "transition",
         ButtonVariantClassName[variant].base,
         ButtonVariantClassName[variant].hover,
+        ButtonVariantClassName[variant].disabled,
         ButtonSizeClassName[size]
       )}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </button>
