@@ -1,7 +1,9 @@
 import classNames from "classnames";
+import Link from "next/link";
 
 type ButtonVariant = "primary" | "outlined";
 type ButtonSize = "md" | "sm";
+type ButtonType = "button" | "link";
 
 const ButtonVariantClassName = {
   primary: {
@@ -20,18 +22,39 @@ const ButtonSizeClassName = {
 };
 
 interface ButtonProps {
+  type?: ButtonType;
+  href?: string;
   variant: ButtonVariant;
   size: ButtonSize;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: string;
 }
 
 const Button = ({
+  type = "button",
   variant = "primary",
   size = "md",
   onClick,
+  href = "",
   children,
 }: ButtonProps) => {
+  if (type === "link") {
+    return (
+      <Link href={href}>
+        <a
+          className={classNames(
+            "transition",
+            ButtonVariantClassName[variant].base,
+            ButtonVariantClassName[variant].hover,
+            ButtonSizeClassName[size]
+          )}
+        >
+          {children}
+        </a>
+      </Link>
+    );
+  }
+
   return (
     <button
       type="button"
@@ -49,6 +72,7 @@ const Button = ({
 };
 
 Button.defaultProps = {
+  type: "button",
   variant: "primary",
   size: "md",
 };
