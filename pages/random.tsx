@@ -15,7 +15,8 @@ const Random: NextPage = () => {
 
   const { data, error } = useSWR(
     `https://api.spoonacular.com/recipes/random?apiKey=${process.env.NEXT_PUBLIC_SPOONACULAR_API_KEY}`,
-    randomRecipeFetcher
+    randomRecipeFetcher,
+    { revalidateOnFocus: false }
   );
 
   const [recipeSaved, setRecipeSaved] = useState<boolean>(false);
