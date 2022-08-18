@@ -17,9 +17,9 @@ const SavedRecipeCard = () => {
           width={100}
           height={100}
         ></Image>
-        <div className="flex flex-col">
-          <h3 className="text-md md:text-xl mb-auto">Recipe name</h3>
-          <p>Prep: 40 min</p>
+        <div className="flex flex-col text-sm">
+          <h3 className="text-xl mb-2">Recipe name</h3>
+          <p className="mb-auto">Prep: 40 min</p>
           <a href="" target="_blank" className="flex gap-1 hover:underline">
             <ExternalLinkIcon />
             Source link
