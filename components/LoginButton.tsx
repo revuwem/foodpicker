@@ -58,7 +58,7 @@ const LoginButton = () => {
               <Menu.Item>
                 {({ active }) => (
                   <MenuLink
-                    href="/profile"
+                    href="/user/saved"
                     className={`group flex w-full items-center px-3 py-3 text-sm text-green-100 capitalize ${
                       active ? `bg-slate-100` : ``
                     }`}
@@ -72,7 +72,7 @@ const LoginButton = () => {
               <Menu.Item>
                 {({ active }) => (
                   <MenuLink
-                    href="/profile"
+                    href="/signout"
                     className={`group flex w-full items-center px-3 py-3 text-sm text-green-100 capitalize ${
                       active ? `bg-slate-100` : ``
                     }`}
