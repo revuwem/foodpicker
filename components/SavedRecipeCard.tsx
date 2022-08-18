@@ -9,7 +9,7 @@ const SavedRecipeCard = () => {
   };
 
   return (
-    <div className="flex items-center gap-24">
+    <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-24">
       <div className="flex gap-4">
         <Image
           src={soupImage}
