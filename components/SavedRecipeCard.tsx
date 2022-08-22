@@ -29,7 +29,9 @@ const SavedRecipeCard = ({ data }: SavedRecipeCardProps) => {
           height={100}
         ></Image>
         <div className="flex flex-col text-sm">
-          <h3 className="text-xl mb-2">{data.title}</h3>
+          <h3 className="font-bold text-md md:text-regular md:text-xl mb-2">
+            {data.title}
+          </h3>
           <p className="mb-auto">Prep: {data.readyInMinutes} min</p>
           <a
             href={data.sourceUrl}
@@ -41,7 +43,7 @@ const SavedRecipeCard = ({ data }: SavedRecipeCardProps) => {
           </a>
         </div>
       </div>
-      <div className="flex gap-8">
+      <div className="flex gap-5 md:gap-8">
         <Button type="link" href="/">
           Get recipe
         </Button>
