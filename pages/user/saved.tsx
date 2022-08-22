@@ -37,7 +37,7 @@ const Saved: NextPage = () => {
         </h2>
         <FlexCenter>
           <div className="flex flex-col items-center mb-10 md:mb-14">
-            <Message msg="You don't have any recipes yet" />
+            <Message>You don't have any recipes yet</Message>
             <Button type="link" href="/random">
               Pick random recipe
             </Button>

@@ -2,10 +2,10 @@ import Image from "next/image";
 import pastaImg from "../assets/images/pasta.png";
 
 interface MessageProps {
-  msg: string;
+  children: string;
 }
 
-const Message = ({ msg }: MessageProps) => {
+const Message = ({ children }: MessageProps) => {
   return (
     <div className="w-full max-w-xl flex flex-col items-center">
       <Image
@@ -16,7 +16,9 @@ const Message = ({ msg }: MessageProps) => {
         placeholder="blur"
         className="mb-8"
       />
-      <h3 className="font-normal text-2xl md:text-3xl mb-10 md:mb-14">{msg}</h3>
+      <h3 className="font-normal text-center text-md md:text-2xl mb-8 md:mb-10">
+        {children}
+      </h3>
     </div>
   );
 };
