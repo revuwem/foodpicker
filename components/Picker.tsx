@@ -5,13 +5,11 @@ import Message from "./Message";
 
 const Picker = () => {
   return (
-    <div className="max-w-xl p-4 flex flex-col items-center">
-      <>
-        <Message>Are you hungry?</Message>
-        <Button type="link" href="/random">
-          Pick random food
-        </Button>
-      </>
+    <div className="flex flex-col items-center mb-10 md:mb-14">
+      <Message>Are you hungry?</Message>
+      <Button type="link" href="/random">
+        Pick random food
+      </Button>
     </div>
   );
 };
