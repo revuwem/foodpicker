@@ -1,6 +1,5 @@
 import Image from "next/image";
 import ExternalLinkIcon from "../assets/icons/external-link.svg";
-import soupImage from "../assets/images/soup.png";
 import Button from "./Button";
 
 export type RecipeShrink = {
