@@ -3,6 +3,7 @@ import ExternalLinkIcon from "../assets/icons/external-link.svg";
 import Button from "./Button";
 
 export type RecipeShrink = {
+  id: number;
   title: string;
   image: string;
   readyInMinutes: number;
@@ -12,13 +13,10 @@ export type RecipeShrink = {
 
 interface SavedRecipeCardProps {
   data: RecipeShrink;
+  onRemove: (id: number) => void;
 }
 
-const SavedRecipeCard = ({ data }: SavedRecipeCardProps) => {
-  const onRemoveRecipeClick = () => {
-    console.log("remove");
-  };
-
+const SavedRecipeCard = ({ data, onRemove }: SavedRecipeCardProps) => {
   return (
     <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-24">
       <div className="flex gap-4">
@@ -47,7 +45,7 @@ const SavedRecipeCard = ({ data }: SavedRecipeCardProps) => {
         <Button type="link" href="/">
           Get recipe
         </Button>
-        <Button variant="outlined" onClick={onRemoveRecipeClick}>
+        <Button variant="outlined" onClick={() => onRemove(data.id)}>
           Remove
         </Button>
       </div>

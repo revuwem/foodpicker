@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
-import useSWR, { useSWRConfig } from "swr";
+import useSWR from "swr";
 import Button from "../../components/Button";
 import Container from "../../components/Container";
 import FlexCenter from "../../components/FlexCenter";
@@ -11,25 +11,33 @@ import SavedRecipeCard, {
 import { recipeInformationBulkFetcher } from "../../utils/fetcher";
 
 const Saved: NextPage = () => {
-  const [localStorageSavedRecipes, setLocalStorageSavedRecipes] = useState<
-    number[]
-  >([]);
+  const [savedRecipes, setSavedRecipes] = useState<number[]>([]);
   const [shouldFetch, setShouldFetch] = useState<boolean>(false);
 
   useEffect(() => {
     const savedRecipes = localStorage.getItem("savedRecipes") ?? "[]";
-    setLocalStorageSavedRecipes(JSON.parse(savedRecipes));
+    setSavedRecipes(JSON.parse(savedRecipes));
     setShouldFetch(true);
   }, []);
 
   const { data, error } = useSWR(
-    shouldFetch && localStorageSavedRecipes.length > 0
-      ? `https://api.spoonacular.com/recipes/informationBulk?apiKey=${process.env.NEXT_PUBLIC_SPOONACULAR_API_KEY}&ids=${localStorageSavedRecipes}`
+    shouldFetch && savedRecipes.length > 0
+      ? `https://api.spoonacular.com/recipes/informationBulk?apiKey=${process.env.NEXT_PUBLIC_SPOONACULAR_API_KEY}&ids=${savedRecipes}`
       : null,
     recipeInformationBulkFetcher
   );
 
-  if (localStorageSavedRecipes.length === 0) {
+  const onRemoveRecipeClick = (id: number) => {
+    const itemToRemoveIndex = savedRecipes?.indexOf(id);
+    const newSavedRecipes = [
+      ...savedRecipes?.slice(0, itemToRemoveIndex),
+      ...savedRecipes?.slice(itemToRemoveIndex + 1),
+    ];
+    setSavedRecipes(newSavedRecipes);
+    localStorage.setItem("savedRecipes", JSON.stringify(newSavedRecipes));
+  };
+
+  if (savedRecipes.length === 0) {
     return (
       <Container>
         <h2 className="font-bold text-2xl md:text-3xl text-green-100 mb-10">
@@ -78,7 +86,11 @@ const Saved: NextPage = () => {
       <ul className="flex flex-col gap-16 md:gap-8">
         {data.map((item: RecipeShrink) => (
           <li>
-            <SavedRecipeCard data={item} />
+            <SavedRecipeCard
+              key={item.id}
+              data={item}
+              onRemove={onRemoveRecipeClick}
+            />
           </li>
         ))}
       </ul>
