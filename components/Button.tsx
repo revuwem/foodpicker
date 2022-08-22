@@ -19,9 +19,13 @@ const ButtonVariantClassName = {
 };
 
 const ButtonSizeClassName = {
-  md: "text-base pt-6 pr-11 pb-5 pl-12",
+  base: "text-xs pt-5 pr-9 pb-4 pl-9",
   sm: "",
+  md: "",
 };
+
+ButtonSizeClassName.md =
+  ButtonSizeClassName.base + " md:text-base md:pt-6 md:pr-11 md:pb-5 md:pl-12";
 
 interface ButtonProps {
   type?: ButtonType;
