@@ -7,11 +7,11 @@ interface MessageProps {
 
 const Message = ({ msg }: MessageProps) => {
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full max-w-xl flex flex-col items-center">
       <Image
         src={pastaImg}
-        width="600px"
-        height="390px"
+        width="400px"
+        height="270px"
         layout="intrinsic"
         placeholder="blur"
         className="mb-8"
