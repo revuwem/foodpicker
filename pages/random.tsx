@@ -67,7 +67,7 @@ const Random: NextPage = () => {
   return (
     <Container>
       <FlexCenter>
-        <div className="grid gap-5">
+        <div className="grid gap-5 mb-8">
           <RecipeCard data={data} />
           <div className="flex justify-center gap-5">
             <Button
