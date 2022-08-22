@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <Container>
       <footer className="h-16 flex justify-between items-center">
-        <span className="w-24 md:w-32 mb-1">
+        <span className="w-24 md:w-32 md:mb-1">
           <LogoIcon />
         </span>
         <p className="text-xs md:text-base">
