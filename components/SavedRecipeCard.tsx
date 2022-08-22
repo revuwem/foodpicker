@@ -42,7 +42,7 @@ const SavedRecipeCard = ({ data, onRemove }: SavedRecipeCardProps) => {
         </div>
       </div>
       <div className="flex gap-5 md:gap-8">
-        <Button type="link" href="/">
+        <Button type="link" href={`/user/saved/${data.id}`}>
           Get recipe
         </Button>
         <Button variant="outlined" onClick={() => onRemove(data.id)}>

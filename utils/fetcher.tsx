@@ -6,4 +6,11 @@ const randomRecipeFetcher = (url: string) =>
 const recipeInformationBulkFetcher = (url: string) =>
   fetcher(url).then((data) => data);
 
-export { randomRecipeFetcher, recipeInformationBulkFetcher };
+const recipeInformationFetcher = (url: string) =>
+  fetcher(url).then((data) => data);
+
+export {
+  randomRecipeFetcher,
+  recipeInformationBulkFetcher,
+  recipeInformationFetcher,
+};
