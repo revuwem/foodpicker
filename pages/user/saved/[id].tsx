@@ -1,3 +1,4 @@
+import { NextPage } from "next";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import Container from "../../../components/Container";
@@ -5,7 +6,7 @@ import FlexCenter from "../../../components/FlexCenter";
 import RecipeCard from "../../../components/RecipeCard";
 import { recipeInformationFetcher } from "../../../utils/fetcher";
 
-const SavedRecipePage = () => {
+const SavedRecipePage: NextPage = () => {
   const router = useRouter();
   const { id } = router.query;
 
