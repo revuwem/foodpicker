@@ -3,6 +3,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import MenuLink from "./MenuLink";
+import Image from "next/image";
 
 const LoginButton = () => {
   const { data: session } = useSession();
@@ -32,10 +33,12 @@ const LoginButton = () => {
           <Menu.Button>
             <div className="flex items-end gap-2">
               {session.user.image && (
-                <img
+                <Image
                   src={session.user.image}
                   alt=""
-                  className="w-8 h-8 rounded-full"
+                  className="rounded-full"
+                  width={30}
+                  height={30}
                 />
               )}
               <span>

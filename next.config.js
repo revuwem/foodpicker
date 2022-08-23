@@ -12,7 +12,7 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ["spoonacular.com"],
+    domains: ["spoonacular.com", "lh3.googleusercontent.com"],
   },
 };
 
