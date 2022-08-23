@@ -1,4 +1,6 @@
 import { NextPage } from "next";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 import Button from "../../components/Button";
@@ -11,13 +13,20 @@ import SavedRecipeCard, {
 import { recipeInformationBulkFetcher } from "../../utils/fetcher";
 
 const Saved: NextPage = () => {
+  const { data: session } = useSession();
+  const router = useRouter();
+
   const [savedRecipes, setSavedRecipes] = useState<number[]>([]);
   const [shouldFetch, setShouldFetch] = useState<boolean>(false);
 
   useEffect(() => {
-    const savedRecipes = localStorage.getItem("savedRecipes") ?? "[]";
-    setSavedRecipes(JSON.parse(savedRecipes));
-    setShouldFetch(true);
+    if (!session) {
+      router.push("/");
+    } else {
+      const savedRecipes = localStorage.getItem("savedRecipes") ?? "[]";
+      setSavedRecipes(JSON.parse(savedRecipes));
+      setShouldFetch(true);
+    }
   }, []);
 
   const { data, error } = useSWR(
