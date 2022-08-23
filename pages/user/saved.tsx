@@ -94,12 +94,8 @@ const Saved: NextPage = () => {
       </h2>
       <ul className="flex flex-col gap-16 md:gap-8">
         {data.map((item: RecipeShrink) => (
-          <li>
-            <SavedRecipeCard
-              key={item.id}
-              data={item}
-              onRemove={onRemoveRecipeClick}
-            />
+          <li key={item.id}>
+            <SavedRecipeCard data={item} onRemove={onRemoveRecipeClick} />
           </li>
         ))}
       </ul>
