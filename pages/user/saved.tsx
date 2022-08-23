@@ -55,14 +55,14 @@ const Saved: NextPage = () => {
     );
   }
 
-  if (error) {
+  if (error || data?.status === "failure") {
     return (
       <Container>
         <h2 className="font-bold text-2xl md:text-3xl text-green-100 mb-10">
           Saved recipes
         </h2>
         <p>Something went wrong</p>
-        <p>{error}</p>
+        <p>{error || data?.message}</p>
       </Container>
     );
   }
