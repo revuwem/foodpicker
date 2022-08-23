@@ -18,7 +18,7 @@ interface SavedRecipeCardProps {
 
 const SavedRecipeCard = ({ data, onRemove }: SavedRecipeCardProps) => {
   return (
-    <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-24">
+    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
       <div className="flex gap-4">
         <Image
           src={data.image}
@@ -27,7 +27,7 @@ const SavedRecipeCard = ({ data, onRemove }: SavedRecipeCardProps) => {
           height={100}
         ></Image>
         <div className="flex flex-col text-sm">
-          <h3 className="font-bold text-md md:text-regular md:text-xl mb-2">
+          <h3 className="max-w-prose md:max-w-md overflow-hidden text-ellipsis md:whitespace-nowrap font-bold text-base md:text-xl mb-2">
             {data.title}
           </h3>
           <p className="mb-auto">Prep: {data.readyInMinutes} min</p>
