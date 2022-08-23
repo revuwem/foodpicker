@@ -27,7 +27,7 @@ const Saved: NextPage = () => {
       setSavedRecipes(JSON.parse(savedRecipes));
       setShouldFetch(true);
     }
-  }, []);
+  }, [router, session]);
 
   const { data, error } = useSWR(
     shouldFetch && savedRecipes.length > 0
