@@ -25,6 +25,7 @@ const SavedRecipeCard = ({ data, onRemove }: SavedRecipeCardProps) => {
           layout="intrinsic"
           width={100}
           height={100}
+          alt=""
         ></Image>
         <div className="flex flex-col text-sm">
           <h3 className="max-w-prose md:max-w-md overflow-hidden text-ellipsis md:whitespace-nowrap font-bold text-base md:text-xl mb-2">

@@ -34,6 +34,7 @@ const RecipeCard = ({ data }: RecipeCardProps) => {
           layout="responsive"
           width={200}
           height={150}
+          alt=""
         ></Image>
       </div>
 

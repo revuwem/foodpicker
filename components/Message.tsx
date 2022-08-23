@@ -15,6 +15,7 @@ const Message = ({ children }: MessageProps) => {
         layout="intrinsic"
         placeholder="blur"
         className="mb-8"
+        alt=""
       />
       <h3 className="font-normal text-center text-md md:text-2xl mb-8 md:mb-10">
         {children}
