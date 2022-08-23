@@ -50,6 +50,7 @@ const RecipeCard = ({ data }: RecipeCardProps) => {
         <a
           href={data.sourceUrl}
           target="_blank"
+          rel="noreferrer"
           className="flex gap-1 hover:underline"
         >
           <ExternalLinkIcon />
