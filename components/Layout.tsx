@@ -12,6 +12,10 @@ const Layout = ({ children }: LayoutProps) => {
       <Head>
         <title>Foodpicker - Pick your today food</title>
         <meta name="description" content="" />
+        <meta
+          name="google-site-verification"
+          content="4v7OYqUd2-7a5dMr1XZv6wutw_94PCdYoU3ZKDTw06U"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
