@@ -45,7 +45,7 @@ const Random: NextPage = () => {
       <Container>
         <FlexCenter>
           <div className="grid gap-5">
-            <Message>Sorry, we don't have any recipes yet</Message>
+            <Message>Sorry, we don&apos;t have any recipes yet</Message>
           </div>
         </FlexCenter>
       </Container>
