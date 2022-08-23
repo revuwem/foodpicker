@@ -21,4 +21,6 @@ const MenuLink = forwardRef<MenuLinkRef, MenuLinkProps>((props, ref) => {
   );
 });
 
+MenuLink.displayName = "MenuLink";
+
 export default MenuLink;
