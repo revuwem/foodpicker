@@ -18,7 +18,7 @@ const LoginButton = () => {
           signIn();
         }}
       >
-        <span className="w-4 md:w-6">
+        <span className="w-6">
           <UserIcon />
         </span>
         <span className="text-sm md:text-base capitalize">Sign In</span>
@@ -37,11 +37,11 @@ const LoginButton = () => {
                   src={session.user.image}
                   alt=""
                   className="rounded-full"
-                  width={30}
-                  height={30}
+                  width={26}
+                  height={26}
                 />
               )}
-              <span>
+              <span className="text-sm md:text-base">
                 {session.user.name?.split(" ")[0] || session.user.email}
               </span>
             </div>
